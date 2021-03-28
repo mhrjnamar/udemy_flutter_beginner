@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_flutter_beginner/RadioPractice.dart';
+import 'package:udemy_flutter_beginner/SwitchesPractice.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -69,6 +70,7 @@ class _State extends State<MyApp> {
           child: new Center(
             child: new Column(
               children: <Widget>[
+                new SwitchesPractice(),
                 new RadioPractice(),
                 Text("CheckBox"),
                 new Checkbox(value: _value1, onChanged: _value1Changed),
