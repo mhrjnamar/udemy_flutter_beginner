@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class AppBarPractice extends StatefulWidget {
@@ -12,6 +14,9 @@ class _AppBarPracticeState extends State<AppBarPractice> {
   void _add() => setState(() => _value++);
   void _remove() => setState(() => _value--);
 
+  String _floatingActionButtonValue = '';
+  void _onClicked() => setState(() => _floatingActionButtonValue = new DateTime.now().toString());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +28,18 @@ class _AppBarPracticeState extends State<AppBarPractice> {
             new IconButton(onPressed: _remove, icon: new Icon(Icons.remove)),
         ],
       ),
-      body: Text(_value.toString()),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _onClicked,
+        backgroundColor: Colors.red,
+        mini: false,
+        child: Icon(Icons.timer),
+      ),
+      body: Column(
+        children: [
+          Text(_floatingActionButtonValue),
+          Text(_value.toString()),
+        ],
+      )
     );
   }
 }
