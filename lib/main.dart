@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_flutter_beginner/section_3_input_widgets/Section3.dart';
+import 'package:udemy_flutter_beginner/section_4_scaffold/Section4.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -64,58 +65,58 @@ class _State extends State<MyApp> {
         title: new Text('First App'),
       ),
       body: new Container(
-        padding: new EdgeInsets.all(32.0),
-        child: new SingleChildScrollView(
-          child: new Center(
-            child: new Column(
-              children: <Widget>[
-               new Section3(),
-                Text("CheckBox"),
-                new Checkbox(value: _value1, onChanged: _value1Changed),
-                new CheckboxListTile(
-                  value: _value2,
-                  onChanged: _value2Changed,
-                  title: new Text('Hello World'),
-                  controlAffinity: ListTileControlAffinity.leading,
-                  subtitle: new Text('Subtitle'),
-                  secondary: new Icon(Icons.archive),
-                  activeColor: Colors.red,
-                ),
-                new Text(_value),
-                new ElevatedButton(
-                  onPressed: () => _onPressed,
-                  child: new Text("Click me"),
-                ),
-                new TextButton(
-                  onPressed: () => _onPressed,
-                  child: new Text('Click'),
-                ),
-                new Text('Value = $_intValue'),
-                new IconButton(icon: new Icon(Icons.add), onPressed: _add),
-                new IconButton(
-                    icon: new Icon(Icons.remove), onPressed: _subtract),
-                new ElevatedButton(
-                    onPressed: _onClick, child: new Text("Tell my name")),
-                new Text(_stringValue),
-                new TextField(
-                  decoration: new InputDecoration(
-                    labelText: "Hello",
-                    hintText: 'Hint',
-                    icon: new Icon(Icons.people),
+          padding: new EdgeInsets.all(32.0),
+          child: new SingleChildScrollView(
+            child: new Center(
+              child: new Column(
+                children: <Widget>[
+                  new ElevatedButton(onPressed: () => {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Section4(),))
+                  }, child: new Text("Section 4")),
+                  new Section3(),
+                  Text("CheckBox"),
+                  new Checkbox(value: _value1, onChanged: _value1Changed),
+                  new CheckboxListTile(
+                    value: _value2,
+                    onChanged: _value2Changed,
+                    title: new Text('Hello World'),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    subtitle: new Text('Subtitle'),
+                    secondary: new Icon(Icons.archive),
+                    activeColor: Colors.red,
                   ),
-                  autocorrect: true,
-                  autofocus: true,
-                  keyboardType: TextInputType.text,
-                  onChanged: _onChange,
-                  onSubmitted: _onSubmit,
-                ),
-
-
-              ],
+                  new Text(_value),
+                  new ElevatedButton(
+                    onPressed: () => _onPressed,
+                    child: new Text("Click me"),
+                  ),
+                  new TextButton(
+                    onPressed: () => _onPressed,
+                    child: new Text('Click'),
+                  ),
+                  new Text('Value = $_intValue'),
+                  new IconButton(icon: new Icon(Icons.add), onPressed: _add),
+                  new IconButton(
+                      icon: new Icon(Icons.remove), onPressed: _subtract),
+                  new ElevatedButton(
+                      onPressed: _onClick, child: new Text("Tell my name")),
+                  new Text(_stringValue),
+                  new TextField(
+                    decoration: new InputDecoration(
+                      labelText: "Hello",
+                      hintText: 'Hint',
+                      icon: new Icon(Icons.people),
+                    ),
+                    autocorrect: true,
+                    autofocus: true,
+                    keyboardType: TextInputType.text,
+                    onChanged: _onChange,
+                    onSubmitted: _onSubmit,
+                  ),
+                ],
+              ),
             ),
-          ),
-        )
-      ),
+          )),
     );
   }
 }
