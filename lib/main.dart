@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_flutter_beginner/DatePickerPractice.dart';
-import 'package:udemy_flutter_beginner/RadioPractice.dart';
-import 'package:udemy_flutter_beginner/SliderPractice.dart';
-import 'package:udemy_flutter_beginner/SwitchesPractice.dart';
+import 'package:udemy_flutter_beginner/section_3_input_widgets/Section3.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -72,10 +69,7 @@ class _State extends State<MyApp> {
           child: new Center(
             child: new Column(
               children: <Widget>[
-                new DatePickerPractice(),
-                new SliderPractice(),
-                new SwitchesPractice(),
-                new RadioPractice(),
+               new Section3(),
                 Text("CheckBox"),
                 new Checkbox(value: _value1, onChanged: _value1Changed),
                 new CheckboxListTile(
