@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy_flutter_beginner/DatePickerPractice.dart';
 import 'package:udemy_flutter_beginner/RadioPractice.dart';
 import 'package:udemy_flutter_beginner/SliderPractice.dart';
 import 'package:udemy_flutter_beginner/SwitchesPractice.dart';
@@ -71,6 +72,7 @@ class _State extends State<MyApp> {
           child: new Center(
             child: new Column(
               children: <Widget>[
+                new DatePickerPractice(),
                 new SliderPractice(),
                 new SwitchesPractice(),
                 new RadioPractice(),
