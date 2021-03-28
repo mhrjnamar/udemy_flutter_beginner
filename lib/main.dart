@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_flutter_beginner/RadioPractice.dart';
+import 'package:udemy_flutter_beginner/SliderPractice.dart';
 import 'package:udemy_flutter_beginner/SwitchesPractice.dart';
 
 void main() {
@@ -70,6 +71,7 @@ class _State extends State<MyApp> {
           child: new Center(
             child: new Column(
               children: <Widget>[
+                new SliderPractice(),
                 new SwitchesPractice(),
                 new RadioPractice(),
                 Text("CheckBox"),
