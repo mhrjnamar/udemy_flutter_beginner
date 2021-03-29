@@ -17,8 +17,12 @@ class _AppBarPracticeState extends State<AppBarPractice> {
   String _floatingActionButtonValue = '';
   void _onClicked() => setState(() => _floatingActionButtonValue = new DateTime.now().toString());
 
+  String _footerValue ="";
+  void _onClick(String value) => setState(() => _footerValue = value);
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: new AppBar(
         title: Text("Hello World"),
@@ -39,6 +43,11 @@ class _AppBarPracticeState extends State<AppBarPractice> {
           ),
         ),
       ),
+      persistentFooterButtons: [
+        IconButton(onPressed: () => _onClick("Button 1"), icon: Icon(Icons.timer)),
+        IconButton(onPressed: () => _onClick("Button 2"), icon: Icon(Icons.people)),
+        IconButton(onPressed: () => _onClick("Button 3"), icon: Icon(Icons.map)),
+      ],
       floatingActionButton: FloatingActionButton(
         onPressed: _onClicked,
         backgroundColor: Colors.red,
@@ -49,6 +58,7 @@ class _AppBarPracticeState extends State<AppBarPractice> {
         children: [
           Text(_floatingActionButtonValue),
           Text(_value.toString()),
+          Text(_footerValue),
         ],
       )
     );
