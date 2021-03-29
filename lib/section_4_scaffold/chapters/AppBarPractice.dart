@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:udemy_flutter_beginner/section_4_scaffold/assignment/Section4Assignment.dart';
 
 class AppBarPractice extends StatefulWidget {
   @override
@@ -20,27 +21,8 @@ class _AppBarPracticeState extends State<AppBarPractice> {
   String _footerValue ="";
   void _onClick(String value) => setState(() => _footerValue = value);
 
-  List<BottomNavigationBarItem> _items;
   String _bottomNavigationValue ="";
   int _index = 0;
-
-  @override
-  void initState() {
-    _items = [
-      BottomNavigationBarItem(
-        icon: Icon(Icons.people),
-        label: "People"
-      ),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.weekend),
-          label: "Weekend"
-      ),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.message),
-          label: "Message"
-      ),
-    ];
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,6 +88,10 @@ class _AppBarPracticeState extends State<AppBarPractice> {
           Text(_value.toString()),
           Text(_footerValue),
           Text(_bottomNavigationValue),
+          ElevatedButton(onPressed: () =>
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => Section4Assignment())),
+              child: Text("Assignment"))
         ],
       )
     );
