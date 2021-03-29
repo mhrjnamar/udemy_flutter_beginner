@@ -28,6 +28,17 @@ class _AppBarPracticeState extends State<AppBarPractice> {
             new IconButton(onPressed: _remove, icon: new Icon(Icons.remove)),
         ],
       ),
+      drawer: Drawer(
+        child: Container(
+          padding: new EdgeInsets.all(32),
+          child: Column(
+            children: [
+              new Text("Hello Drawer"),
+              new ElevatedButton(onPressed: () => Navigator.pop(context), child: Text("Close"))
+            ],
+          ),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _onClicked,
         backgroundColor: Colors.red,
