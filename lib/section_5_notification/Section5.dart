@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_flutter_beginner/section_5_notification/chapters/SimpleDialogPractice.dart';
+import 'package:udemy_flutter_beginner/section_5_notification/assignments/Section5Assignment.dart';
 
 class Section5 extends StatefulWidget {
   @override
@@ -11,6 +11,7 @@ class _Section5State extends State<Section5> {
   Widget build(BuildContext context) {
     // return BottomSheetPractice();
     // return AlertDialogPractice();
-    return SimpleDialogPractice();
+    // return SimpleDialogPractice();
+    return Section5Assignment();
   }
 }
