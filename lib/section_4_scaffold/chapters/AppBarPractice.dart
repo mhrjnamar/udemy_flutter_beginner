@@ -20,6 +20,28 @@ class _AppBarPracticeState extends State<AppBarPractice> {
   String _footerValue ="";
   void _onClick(String value) => setState(() => _footerValue = value);
 
+  List<BottomNavigationBarItem> _items;
+  String _bottomNavigationValue ="";
+  int _index = 0;
+
+  @override
+  void initState() {
+    _items = [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.people),
+        label: "People"
+      ),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.weekend),
+          label: "Weekend"
+      ),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.message),
+          label: "Message"
+      ),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -54,11 +76,36 @@ class _AppBarPracticeState extends State<AppBarPractice> {
         mini: false,
         child: Icon(Icons.timer),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.people),
+              label: "People"
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.weekend),
+              label: "Weekend"
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.message),
+              label: "Message"
+          ),
+        ],
+        fixedColor: Colors.blue,
+        currentIndex: _index,
+        onTap: (int item) {
+          setState(() {
+            _index = item;
+            _bottomNavigationValue = "Current value is: ${_index.toString()}";
+          });
+        },
+      ),
       body: Column(
         children: [
           Text(_floatingActionButtonValue),
           Text(_value.toString()),
           Text(_footerValue),
+          Text(_bottomNavigationValue),
         ],
       )
     );
