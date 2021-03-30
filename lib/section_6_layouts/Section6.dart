@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy_flutter_beginner/section_6_layouts/chapters/CardPractice.dart';
 import 'package:udemy_flutter_beginner/section_6_layouts/chapters/RowsAndColumnPractice.dart';
 
 class Section6 extends StatefulWidget {
@@ -14,7 +15,12 @@ class _Section6State extends State<Section6> {
         title: Text("Section 6"),
       ),
       body: Column(
-        children: [RowsAndColumnPractice()],
+        children: [
+          RowsAndColumnPractice(),
+          CardPractice(),
+          CardPractice(),
+          CardPractice(),
+        ],
       ),
     );
   }
