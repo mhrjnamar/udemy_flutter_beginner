@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:udemy_flutter_beginner/section_3_input_widgets/Section3.dart';
 import 'package:udemy_flutter_beginner/section_4_scaffold/Section4.dart';
 import 'package:udemy_flutter_beginner/section_5_notification/Section5.dart';
+import 'package:udemy_flutter_beginner/section_6_layouts/Section6.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -71,6 +72,9 @@ class _State extends State<MyApp> {
             child: new Center(
               child: new Column(
                 children: <Widget>[
+                  new ElevatedButton(onPressed: () => {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Section6(),))
+                  }, child: new Text("Section 6")),
                   new ElevatedButton(onPressed: () => {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Section5(),))
                   }, child: new Text("Section 5")),
